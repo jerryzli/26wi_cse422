@@ -1,0 +1,316 @@
+
+
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1.0"/>
+        <title>CSE 422 Winter 2025</title>
+        <meta name="description" content="CSE 422"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Toolkit for Modern Algorithms</h1>
+            <b>CSE 422 | Winter 2026</b>
+
+            <p><i></i></p>
+        </header>
+
+        <h2>Course information</h2>
+            Instructor: <a href="jerryzli.github.io">Jerry Li</a>, Office hours: 3:30-4:30pm Wed in CSE2 315<br>
+            Teaching Assistants: <a href="mailto:ymwang25@cs.washington.edu">Yiming Wang</a> (OH: TBD), <a href="mailto:xinzhi20@cs.washington.edu">Xinzhi Zhang</a> (OH: TBD), <a href="mailto:bohanz04@cs.washington.edu">Bryan Zhao</a> (OH: TBD)<br>
+            Location: CSE2 G10<br>
+            Times: Tu, Th 11:30 - 12:50<br>
+            <a href="https://canvas.uw.edu/courses/1861852">Canvas</a><br>
+            <a href="https://www.gradescope.com/courses/1202118">Gradescope</a>
+
+
+        <h2>Course description</h2>
+        This course provides a rigorous introduction to the principles of modern algorithm design, with a particular focus on the analysis of large, noisy data sets, and the algorithmic principles underlying modern statistics and machine learning. For most topics, there will be an associated assignment, where students will get their hands dirty, experimenting with underlying ideas.
+
+        Evaluation is based on nine weekly assignments. No late assignments are allowed, but your lowest score will be dropped.
+        <h2>Prerequisites</h2>
+        <p>The formal requirements are CSE 311 and 312 (or equivalent background).</p>
+
+        <p>This should be considered an advanced undergraduate course. Students should be comfortable with data structures, probability theory, and linear algebra.</p>
+
+        <h2>Tentative course schedule and topics<a href="#fn2" id="ref2" style="border-bottom: 0;">&dagger;</a></h2>
+        Click on each lecture to see additional (optional) reading for the associated lecture.
+            <li>Week 1: Modern Hashing
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l1')">Lecture 1 (1/7): Course introduction. Consistent hashing.</a> &nbsp;<a href="https://homes.cs.washington.edu/~jrl/cse422wi24/notes/consistent-hashing.html">[notes]</a> <a href="scribe_notes/Lecture 1.pdf">[scribe notes]</a><br>
+                        <ul id="l1" style="display:none">
+                        <li>Akamai paper: <a href="papers/akamai.pdf">Consistent hashing and random trees:  Distributed caching protocols for relieving hot spots on the world wide web</a> (STOC 1997)</li>
+                        <li>A survey of <a href="http://www.sigcomm.org/sites/default/files/ccr/papers/2015/July/0000000-0000009.pdf">Algorithmic Nuggets in Content Delivery</a></li>
+                        <li><a href="http://pdos.csail.mit.edu/papers/chord:sigcomm01/chord_sigcomm.pdf">Chord: A scalable peer-to-peer lookup service for internet applications</a> (SIGCOMM 2001)</li>
+                        <li><a href="http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Dynamo: Amazon’s highly available key-value store</a> (SOSP 2007)</li>
+                        <li>Rendezvous hashing: <a href="http://www.eecs.umich.edu/techreports/cse/96/CSE-TR-316-96.pdf">A name-based mapping scheme for Rendezvous</a> (Nov, 1996)</li>
+                    </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" onclick="toggle('l2')">Lecture 2 (1/9): Probability review. Heavy hitters, count-min sketch. </a>&nbsp;<a href="https://homes.cs.washington.edu/~jrl/cse422wi24/notes/heavy-hitters.pdf">[notes]</a> <a href="scribe_notes/Lecture 2.pdf">[scribe notes]</a>
+                        <ul id="l2" style="display:none">
+                            <li><a href="http://www.eecs.harvard.edu/~michaelm/postscripts/im2005b.pdf">Network applications of Bloom filters:  A survey</a> (Broder and Mitzenmacher, 2005)</li>
+                            <li><a href="http://dimacs.rutgers.edu/~graham/pubs/papers/cm-full.pdf">An improved data stream summary:  The count-min sketch and its applications</a> (Cormode and Muthukrishnan, 2003)</li>
+                            <li><a href="https://www.cs.cmu.edu/~avrim/Randalgs11/lectures/lect0202.pdf">Formal analysis of balls in bins</a> (A. Gupta, CMU)</li>
+                          </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Week 2: Metric data
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l3')">Lecture 3 (1/14): Similarity search </a>&nbsp;<a href="cse422wi25/lec3.pdf">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 3.pdf">[scribe notes]</a>
+                        <ul  id="l3" style="display:none">
+                            <li><a href="https://en.wikipedia.org/wiki/K-d_tree">k-d trees on Wikipedia</a></li>
+                            <li><a href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.KDTree.html">Python implementation</a></li>
+                            <li><a href="https://www.cs.umd.edu/~mount/ANN/">ANN: A library for approximate NNS</a></li>
+                            <li>Splitting rule with a rigorous analysis:
+                          <a href="http://www.cs.umd.edu/~mount/Papers/cgc99-smpack.pdf">It’s okay to be skinny if your friends are fat</a> (Maneewongvatana and Mount, 1999)</li>
+                        </ul>
+                    </li>
+
+                    <li><a href="javascript:void(0);" onclick="toggle('l4')">Lecture 4: (1/16): Curse of dimensionality</a>&nbsp;<a href="https://homes.cs.washington.edu/~jrl/cse422wi24/notes/curse-of-dimensionality.html">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 4.pdf">[scribe notes]</a>
+                        <ul id="l4" style="display:none">
+                            <li><a href="https://en.wikipedia.org/wiki/Locality-sensitive_hashing">Locality sensitive hashing (LSH)</a> (Wikipedia)</li>
+                            <li>The paper that led to MinHash at Alta Vista:  <a href="http://cs.brown.edu/courses/cs253/papers/nearduplicate.pdf">Identify and filtering near-duplicate documents</a> (Broder, 2000)</li>
+                            <li><a href="http://mags.acm.org/communications/200801/#pg119">Near-optimal hashing algorithms for approximate nearest neighbor in high dimension</a> (Andoni and Indyk, 2008)
+                            </li>
+                            <li> These notes give a short formal proof of the JL lemma: <a href="https://homes.cs.washington.edu/~jrl/teaching/cse525au16/lectures/lecture11.pdf">Dimension reduction notes from CSE 525</a>
+                            </li>
+                            <li><a href="https://www.cs.princeton.edu/~chazelle/pubs/fasterdim-ac10.pdf">Faster dimension reduction</a> (Ailon and Chazelle, 2010)</li>
+                            <li>The original JL paper: <a href="notes/docs/JL.pdf">Extensions of Lipschitz mappings into a Hilbert space</a> (Johnson and Lindenstrauss, 1984)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Week 3: Learning theory
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l5')">Lecture 5 (1/21): Generalization theory </a>&nbsp;<a href="cse422wi25/lec5.pdf">[notes]</a>  <a href="cse422wi25/scribe_notes/Lecture 5.pdf">[scribe notes]</a>
+                    <ul id="l5" style="display:none">
+                        <li><a href="lectures/pdf/valiant.pdf">A theory of the learnable</a> (Valiant, 1984)
+                    </li>
+                    <li>
+                     <a href="https://arxiv.org/pdf/1611.03530.pdf">Understanding deep learning requires rethinking generalization</a> (Zhang, et. al., 2017)<br>
+                    A phenemenon that is currently not fully explained is the the generalizability of models from deep learning.
+                    These models are often heavily overparameterized, so they "should" overfit according to the traditional theory.
+                    Yet even without explicit regularization, these models generalize unexpectedly well from training data.
+                    </li>
+                    </ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l6')">Lecture 6 (1/23): Regularization </a>&nbsp;<a href="cse422wi25/lec6.pdf">[notes]</a>  <a href="cse422wi25/scribe_notes/Lecture 6.pdf">[scribe notes]</a>
+                        <ul id="l6" style="display:none">
+                            <li>
+                                L1 regularization—also known as “basis pursuit” in this context—is a fundamental building block for <a href="https://en.wikipedia.org/wiki/Compressed_sensing">compressive sensing</a>.
+                            </li>
+                        <li>
+                            A matrix version of L1 regularization ("atomic norm" minimization) is useful for <a href="https://en.wikipedia.org/wiki/Matrix_completion">matrix completion and the Netflix problem</a>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Week 4: Principal component analysis
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l7')">Lecture 7 (1/28): Introduction to PCA </a>&nbsp;<a href="cse422wi25/lec7.pdf">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 7.pdf">[scribe notes]</a>
+                        <ul id="l7" style="display:none">
+                            <li><a href="https://blog.23andme.com/news/a-different-kind-of-gene-mapping-comparing-genetic-and-geographic-structure-in-europe-the-return/">A Different Kind of Gene Mapping: Comparing Genetic and Geographic Structure in Europe</a></li>
+                            <li><a href="http://jeremykun.com/2011/07/27/eigenfaces/">Eigenfaces blog post</a></li>
+                            <li><a href="http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/">Everything you didn’t know about PCA</a></li>
+                            <li><a href="http://setosa.io/ev/principal-component-analysis/">PCA explained visually</a> - possibly useful visualization tools</li>
+                          </ul>
+                          
+                    <li><a href="javascript:void(0);" onclick="toggle('l8')">Lecture 8 (1/30): Computing the principal components </a>&nbsp;<a href="cse422wi25/lec8.pdf">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 8.pdf">[scribe notes]</a>
+                        <ul id="l8" style="display:none">
+                            <li><a href="http://blog.mrtz.org/2013/12/04/power-method.html">Power method still powerful</a></li>
+                            <li>Block methods of the power method are based on <a href="https://en.wikipedia.org/wiki/Krylov_subspace">Krylov iteration</a></li>
+                        </ul>
+                </ul>
+            </li>
+            <li>Week 5: Low-rank approximation
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l9')">Lecture 9 (2/4): Singular value decomposition</a>&nbsp;<a href="cse422wi25/lec9.pdf">[notes]</a>  <a href="cse422wi25/scribe_notes/Lecture 9.pdf">[scribe notes]</a>
+                        <ul id="l9" style="display:none">
+                            <li><a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">Singular value decomposition and applications</a></li>
+                            <li>Recently, low rank approximations were proposed to speed up large language models: see e.g. <a href="https://arxiv.org/abs/2106.09685">LoRA</a>.</li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" onclick="toggle('l10')">Lecture 10 (2/6): Tensors and tensor low-rank decomposition</a>&nbsp;<a href="cse422wi25/lec10.pdf">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 10.pdf">[scribe notes]</a>
+                        <ul id="l10" style="display:none">
+                            <li>A blog post describing <a href="http://www.offconvex.org/2015/12/17/tensor-decompositions/">Spearman’s original experiment</a></li>
+                            <li>A blog post about the <a href="http://blog.mrtz.org/2014/04/22/pearsons-polynomial.html">method of moments in research on evolution</a></li>
+                            <li><a href="https://dl.acm.org/doi/10.1137/07070111X">Tensor Decompositions and Applications</a> by Kolda and Bader</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Week 6: Spectral graph theory
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l11')">Lecture 11 (2/11): Graphs as matrices</a>&nbsp;<a href="https://homes.cs.washington.edu/~jrl/cse422wi24/notes/spectral-graph-theory.html">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 11.pdf">[scribe notes]</a>
+                        <ul id="l11" style="display:none">
+                            <li>Dan Spielman’s <a href="http://www.cs.yale.edu/homes/spielman/561/">lecture notes</a> for a semester-long course on Spectral Graph Theory.</li>
+                            <li>For some more advanced material, see these courses by
+                          <a href="http://web.stanford.edu/class/msande337/">Amin Saberi</a> (Stanford)
+                          and <a href="http://homes.cs.washington.edu/~shayan/courses/cse599/index.html">Shayan Oveis Gharan</a> (UW).</li>
+                            <li>A general-audience scientific talk James Lee (UW prof) gave on <a href="https://youtu.be/8XJes6XFjxM">the unreasonable effectiveness of spectral graph theory</a></li>
+                            <li>Google’s first ranking algorithm <a href="https://en.wikipedia.org/wiki/PageRank">PageRank</a> can be seen
+                          as envisioning the web graph as a physical system.</li>
+                            <li>Anup Rao (UW prof) advocates <a href="https://homes.cs.washington.edu/~anuprao/pubs/tradetalk.pdf">using spectral methods to analyze trade networks</a>.</li>
+                            <li>A little tutorial: <a href="https://towardsdatascience.com/spectral-clustering-for-beginners-d08b7d25b4d8">Spectral clustering for beginners</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" onclick="toggle('l12')">Lecture 12 (2/13): Spectral clustering</a>&nbsp;<a href="https://homes.cs.washington.edu/~jrl/cse422wi24/notes/spectral-clustering.html">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 12.pdf">[scribe notes]</a>
+                        <ul id="l12" style="display:none">
+                            <li><a href="https://www.degruyter.com/document/doi/10.1515/9781400869312-013/pdf?licenseType=restricted">Cheeger's original paper</a>(paywalled though...)</li>
+                            <li>A <a href="https://homes.cs.washington.edu/~shayan/courses/approx/adv-approx-17.pdf">full proof</a> of the discrete Cheeger's inequality</li>
+                            <li>The paper on <a href="https://arxiv.org/pdf/1111.1055">higher-order Cheeger inequalities</a> by James (UW), Shayan (UW), Luca Trevisan </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Week 7: Mathematical programming
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l13')">Lecture 13 (2/18): Compressive Sensing</a>&nbsp;<a href="cse422wi25/lec13.pdf">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 13.pdf">[scribe notes]</a>
+                        <ul id="l13" style="display:none">
+                            <li>A <a href="https://www.youtube.com/watch?v=W-b4aDGsbJk">survey talk</a> of Emmanuel Candes on compressive sensing</li>
+                            <li>A <a href="https://news.mit.edu/2017/faster-single-pixel-camera-lensless-imaging-0330">faster single-pixel camera</a></li>
+                            <li>Discussion of the <a href="https://people.eecs.berkeley.edu/~mlustig/l1-SPIRiT.pdf">applications in medical imaging</a></li>
+                            <li>A CSE 525 lecture on <a href="https://homes.cs.washington.edu/~jrl/teaching/cse525sp19/notes/lecture11.pdf">analysis of random sensing matrices</a></li>
+                            <li>A <a href="https://arxiv.org/pdf/0805.0510">completely different type of algorithm</a> for compressive sensing via non-convex optimization</li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" onclick="toggle('l14')">Lecture 14 (2/20): Linear programming</a>&nbsp;<a href="cse422wi25/lec14.pdf">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 14.pdf">[scribe notes]</a>
+                        <ul id="l14" style="display:none">
+                            <li><a href="https://www.youtube.com/watch?v=TJx8LlNu6QE">The effectiveness of convex programming in the information and physical sciences</a></li>
+                            <li>We used to (and hopefully will again in the future?) teach an <a href="https://yintat.com/teaching/cse535-spring21/">entire course</a> on convex optimization</li>
+                            <li>A CSE 525 lecture on <a href="https://courses.cs.washington.edu/courses/cse525/13sp/scribe/lec8.pdf">semi-definite programming</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Week 8: Online learning
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l15')">Lecture 15 (2/25): The multiplicative weights algorithm</a>&nbsp;<a href="cse422wi25/scribe_notes/Lecture 15.pdf">[scribe notes]</a>
+                        <ul id="l15" style="display:none">
+                            <li><a href="https://web.stanford.edu/class/cs168/l/l17.pdf">Lecture notes for multiplicative weights from Stanford</a></li>
+                            <li>MW was rediscovered multiple times. One such instance is the famous <a href="https://cseweb.ucsd.edu/~yfreund/papers/IntroToBoosting.pdf">AdaBoost paper</a>.</li>
+                            <li>A nice (albeit a bit advanced) <a href="https://www.cs.princeton.edu/~arora/pubs/MWsurvey.pdf">survey</a> on multiplicative weights and its applications</li>
+                        </ul>
+
+                    </li>
+                    <li><a href="javascript:void(0);" onclick="toggle('l16')">Lecture 16 (2/27): Solving linear programs with multiplicative weights</a>&nbsp;<a href="cse422wi25/lec16.pdf">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 16.pdf">[scribe notes]</a>
+                        <ul id="l16" style="display:none">
+                            <li>The full version of the <a href="https://www.satyenkale.com/papers/mw-survey.pdf">survey</a> above also has a nice exposition of matrix multiplicative weights</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Week 9: Sampling
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l17')">Lecture 17 (3/4): Markov Chain Monte Carlo</a>&nbsp;<a href="cse422wi25/lec17.pdf">[notes]</a> <a href="cse422wi25/scribe_notes/Lecture 17.pdf">[scribe notes]</a>
+                        <ul id="l17" style="display:none">
+                            <li><a href="https://homes.cs.washington.edu/~jrl/teaching/cse525sp19/notes/lecture16.pdf">CSE 525 lecture on MCMC</a></li>
+                            <li><a href="https://jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/">MCMC “without all the BS”</a></li>
+                            <li><a href="http://statweb.stanford.edu/~cgates/PERSI/papers/MCMCRev.pdf">The MCMC Revolution (Diaconis)</a></li>
+                            <li><a href="https://www.nature.com/articles/nature16961">Nature article on AlphaGo</a></li>
+                        </ul>
+                    </li> 
+                    <li><a href="javascript:void(0);" onclick="toggle('l18')">Lecture 18 (3/6): Langevin Dynamics and Diffusion Models <a href="cse422wi25/scribe_notes/Lecture 18.pdf">[scribe notes]</a>
+                        <ul id="l18" style="display:none">
+                            <li>A nice <a href="https://friedmanroy.github.io/blog/2022/Langevin/">writeup</a> on Langevin dynamics</li>
+                            <li>The original <a href="https://arxiv.org/abs/2006.11239">DDPM</a> paper</li>
+                            <li>It's impossible to cover stochastic calculus in one lecture. If you want to dedicate a lot of time to understand it properly, a classic reference is a book by <a href="https://link.springer.com/book/10.1007/978-3-642-14394-6">Bernt Øksendal</a> </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Week 10: (Special topic) Robust statistics
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="toggle('l19')">Lecture 19 (3/11): Learning with outliers <a href="cse422wi25/scribe_notes/Lecture 19.pdf">[scribe notes]</a>
+                        <ul id="l19" style="display:none">
+                            <li><a href="https://jerryzli.github.io/robust-ml-fall19/lec1.pdf">Lecture notes</a> from a seminar I taught at UW</li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" onclick="toggle('l20')">Lecture 20 (3/14): Spectral signatures and high-dimensional robust statistics <a href="cse422wi25/scribe_notes/Lecture 20.pdf">[scribe notes]</a>
+                        <ul id="l20" style="display:none">
+                        <li><a href="https://jerryzli.github.io/robust-ml-fall19/lec4.pdf">Lecture notes</a> from the seminar I taught at UW</li>
+                        <li><a href="https://www.youtube.com/watch?v=rUwXBNvY61A">A video</a> that contains a tight proof of the spectral signature lemma, using weighted removal</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+
+        <h2>Problem sets</h2>
+
+        <ul>
+        </ul>
+
+        <h3>Submitting your assignments</h3>
+        Assignments are released on Tuesdays, and everything (code + written answers) is due at 11:59pm on the following Wednesday. Each assignment is based on the week's lecture and reading material, and can be done alone, or with one other student enrolled in the course. In the latter case, only one student should submit files.
+
+        <ul>
+            <li>For the "written" part, you will submit your answers via Gradescope. If you are enrolled in the class, then during the first week, you should receive an email about your enrollment.
+            You should typeset your homeworks using LaTeX or some other system that supports both code snippets and mathematical formulas.            
+            </li>    
+            <li>For the programming part, you are welcome to use whatever programming language you choose, though you are encouraged to use Python together with the Numpy and Pyplot packages. You will turn in all your code files on Canvas. These should be submitted as a single zip file. If you do not work with a partner, please name the file lastname.zip where "lastname" is replaced by your last name. If you work with a partner (recall that only one person should submit), please use the naming convention: lastname1-lastname2.zip. You are allowed to submit multiple times. New submissions will replace the old submission.
+            Note that all your code files should be submitted in this way; some of your code will also be required in the written part, as specified in the assignment.
+            </li>        
+        </ul>
+   
+        <h3>Collaboration policy</h3>
+        <p>You are allowed to refer to your course notes, as well any books, lecture notes, papers, and additional resources that are directly linked from the course web page. Remember to cite the source appropriately and always write discussions and homework answers <i>in your own words.</i></p>
+        
+        <p>It is also permissible to use general-purpose references for the programming languages and libraries that you employ. Use of LLMs is permitted but be warned: the instructors have tried using state-of-the-art systems for these homeworks and their solutions are often wildly incorrect. If you submit incorrect AI slop do not expect partial credit.</p>
+
+        You may discuss assignments at a high level with other groups in the class, as well as with the course staff during office hours, or on Canvas.<br>
+
+        <h2>Guidelines, Resources and Expectations</h2>
+
+        The following is consistent with the standards set at <a href="https://registrar.washington.edu/curriculum/syllabus-guidelines/">the University of Washington at large</a>.
+
+        <h3>Academic Integrity</h3>
+        <p>The University takes academic integrity very seriously. Behaving with integrity is part of our responsibility to our shared learning community. If you’re uncertain about if something is academic misconduct, ask me. I am willing to discuss questions you might have.</p>
+
+        <p>Acts of academic misconduct may include but are not limited to:</p>
+
+        <ul>
+            <li>Cheating (working collaboratively on quizzes/exams and discussion submissions, sharing answers, and previewing quizzes/exams)</li>
+            <li>Plagiarism (representing the work of others as your own without giving appropriate credit to the original author(s))</li>
+        </ul>
+        <p>Concerns about these or other behaviors prohibited by the Student Conduct Code will be referred for investigation and adjudication by (include information for specific campus office).</p>
+
+        <p>Students found to have engaged in academic misconduct may receive a zero on the assignment (or other possible outcome).</p>
+
+        <h3>Conduct</h3>
+        The University of Washington Student Conduct Code (WAC 478-121) defines prohibited academic and behavioral conduct and describes how the University holds students accountable as they pursue their academic goals. Allegations of misconduct by students may be referred to the appropriate campus office for investigation and resolution. More information can be found online <a href="https://www.washington.edu/studentconduct/">here</a>.
+
+        <h3>Accessibility and Disability Resources</h3>
+        <p>Your experience in this class is important to me. It is the policy and practice of the University of Washington to create inclusive and accessible learning environments consistent with federal and state law. If you have already established accommodations with Disability Resources for Students (DRS), please activate your accommodations via myDRS so we can discuss how they will be implemented in this course.</p>
+
+        <p>If you have not yet established services through DRS, but have a temporary health condition or permanent disability that requires accommodations (conditions include but not limited to; mental health, attention-related, learning, vision, hearing, physical or health impacts), contact DRS directly to set up an Access Plan. DRS facilitates the interactive process that establishes reasonable accommodations. Contact DRS at <a href="https:disability.uw.edu">disability.uw.edu</a>.</p>
+
+        <h3>Religious Accomodations</h3>
+        <p>Washington state law requires that UW develop a policy for accommodation of student absences or significant hardship due to reasons of faith or conscience, or for organized religious activities. The UW’s policy, including more information about how to request an accommodation, is available at Religious Accommodations Policy (<a href="https://registrar.washington.edu/staffandfaculty/religious-accommodations-policy/">https://registrar.washington.edu/staffandfaculty/religious-accommodations-policy/</a>). Accommodations must be requested within the first two weeks of this course using the Religious Accommodations Request form (<a href="https://registrar.washington.edu/students/religious-accommodations-request/">https://registrar.washington.edu/students/religious-accommodations-request/</a>).</p>
+
+        <h3>Safety</h3>
+        <p>Call SafeCampus at 206-685-7233 anytime – no matter where you work or study – to anonymously discuss safety and well-being concerns for yourself or others. SafeCampus’s team of caring professionals will provide individualized support, while discussing short- and long-term solutions and connecting you with additional resources when requested.</p>
+
+        <p>The University of Washington prohibits sex discrimination and sex-based harassment and expects all UW community members to respect one another in our shared academic and work environments. Sex discrimination and sex-based harassment can include sexual assault, relationship violence, stalking, unwanted sexual contact, sexual exploitation, sexual harassment, and discrimination based on sex.</p>
+
+        <p>Students who believe they have experienced sex discrimination or sex-based harassment are encouraged to contact a Title IX case manager by making a Title IX report. The case manager can provide guidance on available support resources and resolution options.</p>
+
+    <hr></hr>
+
+    <sup id="fn2">&dagger;. Course schedule and contents subject to change and will be announced throughout the term.<a href="#ref1" title="Jump back to footnote 2 in the text.">↩</a></sup>
+    
+    <script type="text/javascript">
+    function toggle(obj) {
+              var obj=document.getElementById(obj);
+              if (obj.style.display == "block") obj.style.display = "none";
+              else obj.style.display = "block";
+    }
+    </script>
+
+    </body>
+</html>
